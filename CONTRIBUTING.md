@@ -52,7 +52,7 @@ See [WebdriverIO CLI documentation](https://webdriver.io/docs/clioptions.html) f
 
 We use [Webdriverio](https://webdriver.io) and [Jasmine](https://jasmine.github.io) to write the tests. Webdriverio is used to control the browser (navigate, select elements, clicks, etc.) while Jasmine is used to assert the results.
 
-The tests must be stored in the `specs` directory and follow the `*.spec.ts` naming pattern. Each `*.spec.ts` file will be executed in a new WebDriver session and if possible in parallel (to the limit of the `maxInstances` configuration parameter in `wdio.*.conf.js`).
+The tests must be stored in the [`specs`](specs) directory and follow the `*.spec.ts` naming pattern. Each `*.spec.ts` file will be executed in a new WebDriver session and if possible in parallel (to the limit of the `maxInstances` configuration parameter in `wdio.*.conf.js`).
 
 In general, you should try to test a single feature in one spec file. Try to not have too many or too few tests in one file. However, there is no golden rule about that.
 
@@ -117,7 +117,7 @@ General guidelines when writing tests:
 
 ### Helpers
 
-A library of helpers is available in the `helpers` directory and are grouped by widget in the `helpers/index.ts` file.
+A library of helpers is available in the [`helpers`](helpers) directory and are grouped by widget in the [`helpers/index.ts`](helpers/index.ts) file.
 
 These helpers are here to simplify the writing of tests, their readability and their maintenance. You are strongly encouraged to use them in your tests and to contribute to the helpers library.
 
