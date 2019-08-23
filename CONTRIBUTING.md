@@ -1,6 +1,6 @@
 # Contributing
 
-This repository contains the end-2-end test suite for [InstantSearch](https://github.com/algolia/instantsearch.js). These test suites are meant to be shared across all InstantSearch flavors, this is why they are stored in a separate repository.
+This repository contains the end-2-end test suite for [InstantSearch](https://github.com/algolia/instantsearch.js). This test suite is meant to be shared across all InstantSearch flavors, this is why it is stored in a separate repository.
 
 ## Development
 
