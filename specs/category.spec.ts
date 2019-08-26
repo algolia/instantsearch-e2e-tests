@@ -34,7 +34,7 @@ describe('InstantSearch - Search on specific category', () => {
     ]);
   });
 
-  it('deselects "Small Kitchen Appliances" category in list', async () => {
+  it('unselects "Small Kitchen Appliances" category in list', async () => {
     await browser.setSelectedHierarchicalMenuItem('Small Kitchen Appliances');
   });
 
