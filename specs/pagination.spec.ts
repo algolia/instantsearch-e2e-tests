@@ -34,7 +34,7 @@ describe('InstantSearch - Page navigation', () => {
     await browser.setSelectedHierarchicalMenuItem('Appliances');
   });
 
-  it('must have reset the page to 1', async () => {
+  it('must reset the page to 1', async () => {
     const page = await browser.getPage();
 
     expect(page).toEqual(1);
