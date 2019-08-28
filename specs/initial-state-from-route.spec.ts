@@ -1,7 +1,19 @@
+import { URLSearchParams } from 'url';
+
 describe('InstantSearch - Initialize state from the route', () => {
   it('navigates to the e-commerce demo with refinements set in route', async () => {
+    const params = new URLSearchParams({
+      query: 'mixer',
+      page: '2',
+      brands: 'KitchenAid',
+      rating: '4',
+      price: '50:350',
+      free_shipping: 'true', // eslint-disable-line @typescript-eslint/camelcase
+      sortBy: 'instant_search_price_desc',
+      hitsPerPage: '32',
+    });
     await browser.url(
-      'examples/e-commerce/search/Appliances%2FSmall+Kitchen+Appliances/?query=mixer&page=2&brands=KitchenAid&rating=4&price=50%3A350&free_shipping=true&sortBy=instant_search_price_desc&hitsPerPage=32'
+      `examples/e-commerce/search/Appliances%2FSmall+Kitchen+Appliances/?${params.toString()}`
     );
   });
 
