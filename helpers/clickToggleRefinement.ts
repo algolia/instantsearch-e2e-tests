@@ -1,10 +1,10 @@
 declare namespace WebdriverIOAsync {
   interface Browser {
-    toggleToggleRefinementStatus(): Promise<boolean>;
+    clickToggleRefinement(): Promise<boolean>;
   }
 }
 
-browser.addCommand('toggleToggleRefinementStatus', async () => {
+browser.addCommand('clickToggleRefinement', async () => {
   const checkbox = await browser.$('.ais-ToggleRefinement-checkbox');
 
   return checkbox.click();

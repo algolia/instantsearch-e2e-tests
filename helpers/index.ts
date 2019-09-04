@@ -26,7 +26,7 @@ import './dragRangeSliderUpperBoundTo';
 
 // ToggleRefinement
 import './getToggleRefinementStatus';
-import './toggleToggleRefinementStatus';
+import './clickToggleRefinement';
 
 // RatingMenu
 import './getSelectedRatingMenuItem';
