@@ -112,8 +112,8 @@ General guidelines when writing tests:
 - All actions on the browser are asynchronous, so be sure to always `await` them. **Never run multiple asynchronous commands in parallel as it can confuse some browsers (Internet Explorer)**.
 - Use helper functions when possible, for readability but also for maintainability (if one widget is updated, we only have to updates its helpers without touching the tests). [More about Helpers](#helpers).
 - Do not make assertions to know if an action was correctly performed in the browser. If an action fails (trying to click on an non-existing element for example) then WebdriverIO will automatically throw and fail the test, so asserting on it ourselves is redundant.
-- Only assert what you want to see on the page after an action (Is this element displayed? Is the result list correct? etc.)
-- You may need to add some additional steps compared to the original scenario, to wait for some elements to update for example (this was not done in the example above for simplicity).
+- Only assert what you want to see on the page after an action (Is this checkbox selected? Is the result list correct? etc.)
+- You may need to add some additional steps compared to the original scenario, to wait for some elements to update for example (this was not done in the example above for simplicity but you can find some examples [here](https://github.com/algolia/instantsearch-e2e-tests/blob/5a2456b8d63afa684931b0447f00df821b02752b/specs/brand-and-query.spec.ts#L14-L16) or [here](https://github.com/algolia/instantsearch-e2e-tests/blob/5a2456b8d63afa684931b0447f00df821b02752b/specs/price-range.spec.ts#L13-L22)).
 
 ### Helpers
 
@@ -148,3 +148,5 @@ yarn add -D "algolia/instantsearch-e2e-tests#XXX"
 ```
 
 (`XXX` being the tag for the version you want to install)
+
+If [Renovate](https://renovatebot.com/) is enabled on your project then it should update it automatically like any other dependency.
