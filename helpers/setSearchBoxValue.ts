@@ -13,7 +13,7 @@ browser.addCommand('setSearchBoxValue', async (value: string) => {
   await searchBox.scrollIntoView();
 
   // Click the reset button to clear the input
-  if (resetButton.isDisplayed()) {
+  if (await resetButton.isDisplayed()) {
     // The reset button is invisible when nothing to reset
     await resetButton.click();
   }
