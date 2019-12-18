@@ -3,7 +3,7 @@
 set -e
 
 rm -rf vue-instantsearch
-git clone git@github.com:algolia/vue-instantsearch.git --depth=1
+git clone git@github.com:algolia/vue-instantsearch.git --branch master --depth=1
 cd vue-instantsearch
 yarn --ignore-engines
 yarn link instantsearch-e2e-tests

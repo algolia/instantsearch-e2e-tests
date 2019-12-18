@@ -3,7 +3,7 @@
 set -e
 
 rm -rf react-instantsearch
-git clone git@github.com:algolia/react-instantsearch.git --depth=1
+git clone git@github.com:algolia/react-instantsearch.git --branch master --depth=1
 cd react-instantsearch
 yarn --ignore-engines
 yarn link instantsearch-e2e-tests
