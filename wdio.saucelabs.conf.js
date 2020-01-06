@@ -30,8 +30,8 @@ module.exports = {
   sauceConnectOpts: {
     /*
      * Retry to establish a tunnel 2 times maximum on fail
-     * This is usefull to prevent premature test failure if we have difficulties to open the tunnel
-     * (can append if there is already multiple tunnels opened on SauceLabs)
+     * This is useful to prevent premature test failure if we have difficulties to open the tunnel
+     * (can happen if there are already multiple tunnels opened on SauceLabs)
      * https://github.com/bermi/sauce-connect-launcher#advanced-usage
      */
     connectRetries: 2,
