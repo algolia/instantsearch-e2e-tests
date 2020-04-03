@@ -5,11 +5,20 @@ declare namespace WebdriverIOAsync {
 }
 
 browser.addCommand('clickPage', async (number: number) => {
+  const oldUrl = await browser.getUrl();
   const page = await browser.$(`.ais-Pagination-link=${number}`);
   // Assures us that the element is in the viewport
   await page.scrollIntoView();
 
   await page.click();
 
-  return browser.waitForElement(`.ais-Pagination-item--selected=${number}`);
+  await browser.waitForElement(`.ais-Pagination-item--selected=${number}`);
+
+  // Changing the URL will also change the page element IDs in Internet Explorer
+  // Not waiting for the URL to be properly updated before continuing can make the next tests to fail
+  return browser.waitUntil(
+    async () => (await browser.getUrl()) !== oldUrl,
+    undefined,
+    `URL was not updated after navigating to the page "${number}"`
+  );
 });
