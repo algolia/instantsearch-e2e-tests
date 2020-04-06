@@ -4,7 +4,7 @@ declare namespace WebdriverIOAsync {
   }
 }
 
-browser.addCommand('getTextFromSelector', function(selector: string) {
+browser.addCommand('getTextFromSelector', (selector: string) => {
   return browser.execute(function(browserSelector) {
     const elements = document.querySelectorAll(browserSelector);
 

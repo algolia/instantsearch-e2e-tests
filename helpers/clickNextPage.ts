@@ -1,6 +1,6 @@
 declare namespace WebdriverIOAsync {
   interface Browser {
-    clickNextPage(): Promise<boolean>;
+    clickNextPage(): Promise<void>;
   }
 }
 
@@ -21,7 +21,7 @@ browser.addCommand('clickNextPage', async () => {
 
   // Changing the URL will also change the page element IDs in Internet Explorer
   // Not waiting for the URL to be properly updated before continuing can make the next tests fail
-  return browser.waitUntil(
+  await browser.waitUntil(
     async () => (await browser.getUrl()) !== oldUrl,
     undefined,
     `URL was not updated after navigating to the next page`
