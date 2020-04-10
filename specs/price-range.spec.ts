@@ -21,8 +21,9 @@ describe('InstantSearch - Search on specific price range', () => {
             .length === 0
         );
       },
-      undefined,
-      `Results list was not updated to display only hits with prices > ${lowerBound}`
+      {
+        timeoutMsg: `Results list was not updated to display only hits with prices > ${lowerBound}`,
+      }
     );
   });
 
@@ -41,8 +42,9 @@ describe('InstantSearch - Search on specific price range', () => {
             .length === 0
         );
       },
-      undefined,
-      `Results list was not updated to display only hits with prices < ${upperBound}`
+      {
+        timeoutMsg: `Results list was not updated to display only hits with prices < ${upperBound}`,
+      }
     );
   });
 

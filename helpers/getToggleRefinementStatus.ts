@@ -1,4 +1,4 @@
-declare namespace WebdriverIOAsync {
+declare namespace WebdriverIO {
   interface Browser {
     getToggleRefinementStatus(): Promise<boolean>;
   }

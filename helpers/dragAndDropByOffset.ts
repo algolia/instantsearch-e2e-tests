@@ -1,7 +1,7 @@
-declare namespace WebdriverIOAsync {
+declare namespace WebdriverIO {
   interface Browser {
     dragAndDropByOffset(
-      source: WebdriverIOAsync.Element,
+      source: WebdriverIO.Element,
       x: number,
       y?: number
     ): Promise<void>;
@@ -10,11 +10,7 @@ declare namespace WebdriverIOAsync {
 
 browser.addCommand(
   'dragAndDropByOffset',
-  async (
-    source: WebdriverIOAsync.Element,
-    offsetX: number,
-    offsetY: number = 0
-  ) => {
+  async (source: WebdriverIO.Element, offsetX: number, offsetY: number = 0) => {
     // Assures us that the source element is in the viewport
     // (`dragAndDrop` fails if its not the case)
     await source.scrollIntoView();

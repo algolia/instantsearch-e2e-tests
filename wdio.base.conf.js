@@ -6,18 +6,24 @@ module.exports = {
    * https://webdriver.io/docs/static-server-service.html
    * https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-static-server-service
    */
-  services: ['static-server'],
-  staticServerFolders: [
-    {
-      mount: '/',
-      path: './website',
-    },
-    {
-      mount: '/examples/e-commerce/*',
-      path: './website/examples/e-commerce',
-    },
+  services: [
+    [
+      'static-server',
+      {
+        folders: [
+          {
+            mount: '/',
+            path: './website',
+          },
+          {
+            mount: '/examples/e-commerce/*',
+            path: './website/examples/e-commerce',
+          },
+        ],
+        port: 5000,
+      },
+    ],
   ],
-  staticServerPort: 5000,
   /*
    * Set the static server, started above, as the base URL
    * Will be prepended to the `url` parameter of `browser.url()` calls
@@ -64,6 +70,7 @@ module.exports = {
    * https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-jasmine-framework#configuration
    */
   jasmineNodeOpts: {
+    requires: [path.join(__dirname, 'tsregister')],
     defaultTimeoutInterval: 60000,
   },
   /*
@@ -78,22 +85,6 @@ module.exports = {
    * https://webdriver.io/docs/options.html#hooks
    */
   before() {
-    /*
-     * Register TypeScript to compile our `.ts` files
-     * https://webdriver.io/docs/typescript.html
-     */
-    require('ts-node').register({
-      // Only transpile our files without typechecking them, it makes test
-      // faster and exempts us from installing type definitions to run them
-      transpileOnly: true,
-      // Force `ts-node` to compile files in `node_modules` directory
-      // (ignored by default), since our tests will be stored in it
-      ignore: [],
-      // Force `ts-node` to use the config file from the package root
-      // instead of the directory from which `wdio` was called
-      project: path.join(__dirname, './tsconfig.json'),
-    });
-
     /*
      * Register helpers
      * https://webdriver.io/docs/customcommands.html

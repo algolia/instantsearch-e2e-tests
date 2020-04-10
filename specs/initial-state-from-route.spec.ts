@@ -155,8 +155,9 @@ describe('InstantSearch - State and route', () => {
             searchParams.get('hitsPerPage') === '64'
           );
         },
-        undefined,
-        'URL does not have expected parameters'
+        {
+          timeoutMsg: 'URL does not have expected parameters',
+        }
       );
     });
   });

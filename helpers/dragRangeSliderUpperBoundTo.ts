@@ -41,11 +41,9 @@ browser.addCommand('dragRangeSliderUpperBoundTo', async (value: number) => {
 
   // Changing the URL will also change the page element IDs in Internet Explorer
   // Not waiting for the URL to be properly updated before continuing can make the next tests fail
-  await browser.waitUntil(
-    async () => (await browser.getUrl()) !== oldUrl,
-    undefined,
-    `URL was not updated after dragging the range slider upper bound`
-  );
+  await browser.waitUntil(async () => (await browser.getUrl()) !== oldUrl, {
+    timeoutMsg: `URL was not updated after dragging the range slider upper bound`,
+  });
 
   // Depending of the steps calculation there can be a difference between
   // the wanted value and the actual value of the slider, so we return
