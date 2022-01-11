@@ -10,7 +10,7 @@ Install `instantsearch-e2e-tests` and its peerDependencies in your InstantSearch
 yarn add --dev \
 algolia/instantsearch-e2e-tests \
 @wdio/cli @wdio/jasmine-framework @wdio/spec-reporter \
-@wdio/static-server-service \
+@wdio/junit-reporter @wdio/static-server-service \
 @wdio/local-runner @wdio/selenium-standalone-service \
 @wdio/sauce-service
 ```
