@@ -84,6 +84,19 @@ exports.config = {
 };
 ```
 
+## Sending reports to CircleCI
+
+CircleCI can [read JUnit XML test metadata files](https://circleci.com/docs/2.0/collect-test-data/) to provide insights on the stability of the test suite. To enable this feature, you can the following key to your e2e job in **.circleci/config.yml**:
+
+```yaml
+  test_e2e:
+  	# ...
+  	steps:
+  		# ...
+  		- store_test_results:
+  			path: junit/wdio
+```
+
 # License
 
 instantsearch-e2-tests is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
