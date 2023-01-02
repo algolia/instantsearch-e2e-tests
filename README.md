@@ -100,3 +100,4 @@ CircleCI can [read JUnit XML test metadata files](https://circleci.com/docs/2.0/
 # License
 
 instantsearch-e2e-tests is licensed under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+test
